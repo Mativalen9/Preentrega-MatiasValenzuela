@@ -18,4 +18,6 @@ class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
         fields = "__all__"
-        widgets = {"fecha entrega": forms.DateTimeInput(attrs={"type": "datetime-local"})}
+        widgets = {
+            "fecha_entrega": forms.DateTimeInput(attrs={"type": "datetime-local"})
+        }
