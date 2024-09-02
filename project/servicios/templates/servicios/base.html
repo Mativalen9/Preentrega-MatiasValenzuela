@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indumentaria Futbolera</title>
+</head>
+<body>
+    <header>
+        <h1 style="color: rgb(74, 55, 145); text-align: center;">
+            {% block header %}
+            
+            {% endblock header %}
+        </h1>
+    </header>
+    <nav style="text-align: center;">
+        {% include 'servicios/navbar.html' %}
+    </nav>
+
+    <main style="text-align: center;">
+
+        {% block main %}
+            
+        {% endblock main %}
+    </main>
+
+</body>
+</html>

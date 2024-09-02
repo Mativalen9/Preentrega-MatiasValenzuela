@@ -1,0 +1,13 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+Formulario de Registro de Cliente:
+{% endblock header %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
+{% endblock main %}
