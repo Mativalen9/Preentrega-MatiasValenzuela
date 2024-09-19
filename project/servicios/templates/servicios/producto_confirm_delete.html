@@ -1,0 +1,16 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+Borrar Productos
+{% endblock header %}
+
+{% block main %}
+    <p>Esta seguro que quiere borrar el producto " {{ object.nombre}} "?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+    </form>
+    <button>
+        <a href="{% url 'producto_list' %}" style="color: white;">Volver</a>
+    </button>
+{% endblock main %}

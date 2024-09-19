@@ -5,15 +5,24 @@ Lista de Productos:
 {% endblock header %}
 
 {% block main %}
+<form action="{% url 'cliente_list' %}" method="get">
+    <input type="text" name="q" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+</form>
     <button>
         <a href="{% url 'producto_create' %}">Crear Registro:</a>
     </button>
     {% for object in object_list %}
-        <p> Tipo de Producto: {{ object.nombre}} -
-            Talle:{{object.talle}} -
-            Precio: {{object.precio}}
-        </p>
+    <li>
+        {{ object.nombre }}
+        <a href="{% url 'producto_detail' object.id %}">Detalle</a>
+        <a href="{% url 'producto_update' object.id %}">Cambiar</a>
+        <a href="{% url 'producto_delete' object.id %}">Borrar</a>
+    </li>
     {% empty %}
         <p>No hay Registros.</p>
     {% endfor %}
+    <button>
+        <a href="{% url 'index' %}" style="color: red";>Volver</a>
+    </button>
 {% endblock main %}

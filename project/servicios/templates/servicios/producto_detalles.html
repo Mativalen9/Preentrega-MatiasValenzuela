@@ -1,0 +1,16 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+Detalle de Productos:
+{% endblock header %}
+
+{% block main %}
+    <ul>
+        <li>Nombre: {{ object.nombre }}</li>
+        <li>Talle: {{ object.talle }}</li>
+        <li>Precio: {{ object.precio }}</li>
+    </ul>
+    <button>
+        <a href="{% url 'producto_list' %} " style="color: white;">Volver</a>
+    </button>
+{% endblock main %}

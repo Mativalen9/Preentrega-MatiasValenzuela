@@ -1,5 +1,6 @@
 from django import forms
-
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from .models import Cliente, Pedido, Producto
 
 class ClienteForm(forms.ModelForm):
@@ -21,3 +22,13 @@ class PedidoForm(forms.ModelForm):
         widgets = {
             "fecha_entrega": forms.DateTimeInput(attrs={"type": "datetime-local"})
         }
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'email')

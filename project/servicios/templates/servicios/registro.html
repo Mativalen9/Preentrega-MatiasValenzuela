@@ -1,0 +1,15 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+    Nueva Cuenta
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Registrarse</button>
+    </form>
+{% endblock main %}

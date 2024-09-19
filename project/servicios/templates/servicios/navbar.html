@@ -1,4 +1,30 @@
-<button><a href="{% url 'index' %}">🏠 Home</a></button>
-<button><a href="{% url 'cliente_list' %}">👥 Clientes</a></button>
-<button><a href="{% url 'producto_list' %}">📦 Productos</a></button>
-<button><a href="{% url 'pedido_list' %}">🛒 Pedidos</a></button>
+
+<div style="margin-bottom: 2%;
+            display: flex;
+            justify-content: center;
+            gap: 1%;
+            background-color:rgb(95, 83, 68)">
+    <a href="{% url 'index' %}">
+        <button>Home</button>
+    </a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'cliente_list' %}">
+        <button>Clientes</button>
+    </a>
+    <a href="{% url 'producto_list' %}">
+        <button>Productos</button>
+    </a>
+    <a href="{% url 'pedido_list' %}">
+        <button>Pedidos</button>
+    </a>
+    
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    {% else %}
+    <a href="{% url 'login' %}">
+        <button>Iniciar Sesion</button>
+    </a>
+    {% endif %} 
+</div>

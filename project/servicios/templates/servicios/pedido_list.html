@@ -5,6 +5,10 @@ Lista de Pedidos:
 {% endblock header %}
 
 {% block main %}
+    <form action="{% url 'cliente_list' %}" method="get">
+        <input type="text" name="q" placeholder="Buscar...">
+        <button type="submit">Buscar</button>
+    </form>
     <button>
         <a href=" {% url 'pedido_create' %}">Crear Registro:</a>
     </button>
@@ -15,4 +19,7 @@ Lista de Pedidos:
     {% empty %}
     <p>No hay Registros.</p>
     {% endfor %}
+    <button>
+        <a href="{% url 'index' %}" style="color: white";>Volver</a>
+    </button>
 {% endblock main %}
