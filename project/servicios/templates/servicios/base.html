@@ -4,25 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indumentaria Futbolera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Fondo claro */
+            color: #333; /* Texto oscuro */
+            text-align: center;
+        }
+        header {
+            background-color: #1f0381; /* Color del encabezado */
+            color: white; /* Texto blanco */
+            padding: 20px;
+            border-radius: 5px; /* Bordes redondeados */
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0; /* Eliminar margen */
+            font-size: 3em; /* Tamaño de fuente más grande */
+            font-family: 'Roboto', sans-serif; /* Fuente atractiva */
+            text-transform: uppercase; /* Texto en mayúsculas */
+            letter-spacing: 2px; /* Espaciado entre letras */
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        main {
+            background-color: #ffffff; /* Fondo blanco para el contenido */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        }
+        footer {
+            margin-top: 20px;
+            color: #888; /* Texto gris */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 style="color: rgb(74, 55, 145); text-align: center;">
+        <h1>
             {% block header %}
-            
+            Indumentaria Futbolera
             {% endblock header %}
         </h1>
     </header>
-    <nav style="text-align: center;">
+    <nav>
         {% include 'servicios/navbar.html' %}
     </nav>
 
-    <main style="text-align: center;">
-
+    <main>
         {% block main %}
-            
+        <p>Contenido principal aquí</p>
         {% endblock main %}
     </main>
 
+    <footer>
+        <p>&copy; 2024 Indumentaria Futbolera</p>
+    </footer>
 </body>
 </html>
